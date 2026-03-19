@@ -12,6 +12,7 @@ export interface Brand {
   handle?: string;
   platform?: string;
   keyMetric?: string;
+  proofImage?: string;
 }
 
 export interface Service {
@@ -25,7 +26,7 @@ export interface Sample {
   brand: string;
   videoSrc?: string;
   embedUrl?: string;
-  thumbnail: string;
+  thumbnail?: string;
   result?: string;
 }
 
@@ -55,7 +56,7 @@ export interface SiteContent {
 
 const content: SiteContent = {
   hero: {
-    name: "Sathy",
+    name: "Sathya Srinivasan",
     tagline: "UGC Creator — Apps, AI Tools & Product Reviews",
     description:
       "I create high-converting short-form video content for apps, AI tools, and consumer brands. Talking-head UGC, app demos, screen recordings, and performance-driven content that drives real results.",
@@ -73,29 +74,26 @@ const content: SiteContent = {
       label: "Views in Last 30 Days",
     },
     {
-      value: "37+",
-      label: "Pieces of Content Delivered",
+      value: "150+",
+      label: "Pieces of Content Created",
     },
     {
-      value: "1,282",
+      value: "10K+",
       label: "Followers Gained Organically",
     },
   ],
 
   brands: [
     {
-      name: "Taller",
-      logo: "/brands/taller.png",
+      name: "BlazeKey",
+      logo: "/brands/blazeKey logo.png",
       description:
-        "Created high-performing short-form content for Taller, a height prediction app. Managed the @blaze.taller account with talking-head and app demo formats that drove massive organic reach.",
-      tags: ["App Demo", "Talking Head", "Account Management"],
-      handle: "@blaze.taller",
-      platform: "TikTok & Instagram",
-      keyMetric: "320K views in 20 days",
+        "Created high-quality AI tool UGC for BlazeKey, an AI-powered keyboard app. Delivered talking-head and app demo content showcasing the product's features and driving user acquisition.",
+      tags: ["AI Tool", "App Demo", "Talking Head"],
     },
     {
       name: "Hyperknow",
-      logo: "/brands/hyperknow.png",
+      logo: "/brands/hyperknowbrandlogo.png",
       description:
         "Produced AI study app UGC content across TikTok and Instagram, focusing on productivity and education-style content that resonates with student audiences.",
       tags: ["AI Tool", "App Demo", "Education"],
@@ -103,18 +101,22 @@ const content: SiteContent = {
       platform: "TikTok & Instagram",
     },
     {
-      name: "PhraslyAI",
-      logo: "/brands/phrasly.png",
+      name: "Taller",
+      logo: "/brands/tallerapplogo.png",
       description:
-        "Created app-focused UGC for PhraslyAI, an AI text humanizer tool. Delivered screen-recording demos and talking-head content showcasing the product in action.",
-      tags: ["AI Tool", "Screen Recording", "App Demo"],
+        "Created high-performing short-form content for Taller, a height prediction app. Managed the @blaze.taller account with talking-head and app demo formats that drove massive organic reach.",
+      tags: ["App Demo", "Talking Head", "Account Management"],
+      handle: "@blaze.taller",
+      platform: "TikTok & Instagram",
+      keyMetric: "320K views in 20 days",
+      proofImage: "/screenshots/tallerappmetrics.jpg",
     },
     {
       name: "Monster Energy",
-      logo: "/brands/monster.png",
+      logo: "/brands/monsterenergylogo.png",
       description:
-        "Brand ambassador creating product review and lifestyle content. Demonstrates versatility across both app/tech and consumer product categories.",
-      tags: ["Product Review", "Lifestyle", "Ambassador"],
+        "Official Monster Energy brand ambassador. Creating product review and lifestyle content on my personal account, demonstrating versatility across both tech and consumer product categories.",
+      tags: ["Brand Ambassador", "Product Review", "Lifestyle"],
       handle: "@blazetech59",
       platform: "TikTok",
     },
@@ -161,40 +163,37 @@ const content: SiteContent = {
 
   samples: [
     {
-      title: "Taller App — Growth Content",
-      brand: "Taller",
-      thumbnail: "/thumbnails/sample-1.jpg",
-      result: "320K+ views",
+      title: "BlazeKey — AI Tool Demo",
+      brand: "BlazeKey",
+      videoSrc: "/videos/BK Content 1 Final.mp4",
     },
     {
-      title: "Hyperknow — AI Study Tool",
+      title: "Taller — 100K View Reel",
+      brand: "Taller",
+      thumbnail: "/screenshots/TallerReel100K.png",
+      embedUrl:
+        "https://www.instagram.com/reel/DVSwrYICSgL/?igsh=NTc4MTIwNjQ2YQ==",
+      result: "100K+ views",
+    },
+    {
+      title: "Hyperknow — AI Study App",
       brand: "Hyperknow",
-      thumbnail: "/thumbnails/sample-2.jpg",
+      videoSrc: "/videos/Hyperknow Content 12 Final.mp4",
     },
     {
-      title: "PhraslyAI — Product Demo",
-      brand: "PhraslyAI",
-      thumbnail: "/thumbnails/sample-3.jpg",
+      title: "BlazeKey — App Walkthrough",
+      brand: "BlazeKey",
+      videoSrc: "/videos/BK Content 2 Final.mp4",
     },
     {
-      title: "Monster — Product Review",
-      brand: "Monster Energy",
-      thumbnail: "/thumbnails/sample-4.jpg",
-    },
-    {
-      title: "App Walkthrough Demo",
-      brand: "Taller",
-      thumbnail: "/thumbnails/sample-5.jpg",
-    },
-    {
-      title: "Screen Recording + Overlay",
-      brand: "PhraslyAI",
-      thumbnail: "/thumbnails/sample-6.jpg",
+      title: "BlazeKey — Product Showcase",
+      brand: "BlazeKey",
+      videoSrc: "/videos/BK Content 3 Final.mp4",
     },
   ],
 
   contact: {
-    email: "contact@sathy.com",
+    email: "sathyasugc@gmail.com",
     socials: [
       {
         platform: "TikTok",
@@ -210,6 +209,11 @@ const content: SiteContent = {
         platform: "Instagram",
         url: "https://www.instagram.com/blaze.taller",
         handle: "@blaze.taller",
+      },
+      {
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/in/sath47/",
+        handle: "LinkedIn",
       },
     ],
     ratesNote: "Rates available upon request",
