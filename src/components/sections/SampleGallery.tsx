@@ -11,13 +11,14 @@ export default function SampleGallery() {
         <AnimatedSection>
           <SectionHeading
             title="Content Samples"
-            subtitle="A selection of recent work across brands and content styles"
+            subtitle="Play in-browser previews when available, or use the link under each card for TikTok and Instagram"
           />
         </AnimatedSection>
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {content.samples.map((sample, i) => (
             <motion.div
-              key={i}
+              key={`${sample.title}-${sample.brand}`}
+              className="flex h-full min-h-0"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}

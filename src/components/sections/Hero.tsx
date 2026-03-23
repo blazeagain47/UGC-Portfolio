@@ -93,12 +93,16 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="shrink-0"
         >
-          <div className="relative h-64 w-64 overflow-hidden rounded-2xl border-2 border-dark-border shadow-2xl shadow-accent/10 sm:h-72 sm:w-72 md:h-80 md:w-80">
+          <div className="relative h-64 w-64 overflow-hidden rounded-full border-2 border-dark-border shadow-2xl shadow-accent/10 sm:h-72 sm:w-72 md:h-80 md:w-80">
             <img
               src={profilePhoto}
               alt="Sathya Srinivasan"
               className="h-full w-full object-cover"
-              style={{ objectPosition: "50% 18%" }}
+              style={{
+    objectPosition: "46% 16%",
+      transform: "scale(1.28)",
+                transformOrigin: "center",
+              }}
             />
           </div>
         </motion.div>

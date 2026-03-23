@@ -12,7 +12,6 @@ export interface Brand {
   handle?: string;
   platform?: string;
   keyMetric?: string;
-  proofImage?: string;
 }
 
 export interface Service {
@@ -27,7 +26,12 @@ export interface Sample {
   videoSrc?: string;
   embedUrl?: string;
   thumbnail?: string;
+  /** CSS `object-position` for thumbnail crop (2:3 frame) */
+  thumbnailObjectPosition?: string;
+  /** CSS `object-position` for in-card video preview & playback */
+  videoObjectPosition?: string;
   result?: string;
+  embedLabel?: string;
 }
 
 export interface SocialLink {
@@ -65,8 +69,8 @@ const content: SiteContent = {
 
   metrics: [
     {
-      value: "320K+",
-      label: "Views in 20 Days",
+      value: "350K+",
+      label: "Views in 30 Days",
       context: "Taller App",
     },
     {
@@ -90,6 +94,8 @@ const content: SiteContent = {
       description:
         "Created high-quality AI tool UGC for BlazeKey, an AI-powered keyboard app. Delivered talking-head and app demo content showcasing the product's features and driving user acquisition.",
       tags: ["AI Tool", "App Demo", "Talking Head"],
+      handle: "@typewithblaze",
+      platform: "TikTok",
     },
     {
       name: "Hyperknow",
@@ -108,8 +114,7 @@ const content: SiteContent = {
       tags: ["App Demo", "Talking Head", "Account Management"],
       handle: "@blaze.taller",
       platform: "TikTok & Instagram",
-      keyMetric: "320K views in 20 days",
-      proofImage: "/screenshots/tallerappmetrics.jpg",
+      keyMetric: "350K views in 30 days",
     },
     {
       name: "Monster Energy",
@@ -163,32 +168,70 @@ const content: SiteContent = {
 
   samples: [
     {
-      title: "BlazeKey — AI Tool Demo",
-      brand: "BlazeKey",
-      videoSrc: "/videos/BK Content 1 Final.mp4",
-    },
-    {
-      title: "Taller — 100K View Reel",
+      title: "Taller — Instagram reel",
       brand: "Taller",
-      thumbnail: "/screenshots/TallerReel100K.png",
+      thumbnail: "/screenshots/taller-reel-thumb.png",
+      thumbnailObjectPosition: "center 32%",
       embedUrl:
         "https://www.instagram.com/reel/DVSwrYICSgL/?igsh=NTc4MTIwNjQ2YQ==",
-      result: "100K+ views",
+      result: "100K+ views (reel)",
+      embedLabel: "Open on Instagram",
     },
     {
-      title: "Hyperknow — AI Study App",
+      title: "Taller — Strong content format",
+      brand: "Taller",
+      videoSrc: "/videos/taller-content-format-1.mov",
+      embedUrl: "https://www.instagram.com/reel/DWNsvw1ieWW/",
+      embedLabel: "Open on Instagram",
+    },
+    {
+      title: "Hyperknow — Head-style talking tips",
       brand: "Hyperknow",
-      videoSrc: "/videos/Hyperknow Content 12 Final.mp4",
+      thumbnail: "/screenshots/studystorythumbnail.png",
+      thumbnailObjectPosition: "center 48%",
+      embedUrl:
+        "https://www.tiktok.com/@sathyaxstudy/video/7613949943425912094",
+      embedLabel: "Watch on TikTok",
+    },
+    {
+      title: "Hyperknow — Text-led app showcase",
+      brand: "Hyperknow",
+      videoSrc: "/videos/hyperknow-content-4-revision-1.mov",
+      embedUrl:
+        "https://www.tiktok.com/@sathyaxstudy/video/7613949943425912094",
+      embedLabel: "Watch on TikTok",
     },
     {
       title: "BlazeKey — App Walkthrough",
       brand: "BlazeKey",
-      videoSrc: "/videos/BK Content 2 Final.mp4",
+      thumbnail: "/screenshots/bk3thumbnail.png",
+      embedUrl:
+        "https://www.tiktok.com/@typewithblaze/video/7617679014169300255",
+      embedLabel: "Watch on TikTok",
     },
     {
       title: "BlazeKey — Product Showcase",
       brand: "BlazeKey",
-      videoSrc: "/videos/BK Content 3 Final.mp4",
+      thumbnail: "/screenshots/bk1thumbnail.png",
+      embedUrl:
+        "https://www.tiktok.com/@typewithblaze/video/7615443433498365215",
+      embedLabel: "Watch on TikTok",
+    },
+    {
+      title: "Monster Energy — Viral edit trend",
+      brand: "Monster Energy",
+      videoSrc: "/videos/monster-edit.mov",
+      embedUrl:
+        "https://www.tiktok.com/@blazetech59/video/7620571075159543070",
+      embedLabel: "Watch on TikTok",
+    },
+    {
+      title: "Monster Energy — Text on photos (slideshow)",
+      brand: "Monster Energy",
+      thumbnail: "/screenshots/monster-photothumbnail.png",
+      embedUrl:
+        "https://www.tiktok.com/@blazetech59/photo/7620513603237498142?_r=1&_t=ZP-94wQobJjc7i&sp_source=7620600930366801439",
+      embedLabel: "Watch on TikTok",
     },
   ],
 

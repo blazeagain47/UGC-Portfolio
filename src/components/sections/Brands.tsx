@@ -14,10 +14,11 @@ export default function Brands() {
             subtitle="Experience across apps, AI tools, and consumer products"
           />
         </AnimatedSection>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
           {content.brands.map((brand, i) => (
             <motion.div
               key={brand.name}
+              className="flex min-h-0 h-full"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}

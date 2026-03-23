@@ -8,3 +8,4 @@ Thumbs.db
 
 # Large video files (deployed via Vercel direct upload, not via git)
 public/videos/*.mp4
+public/videos/*.mov
