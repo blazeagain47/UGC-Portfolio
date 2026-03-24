@@ -4,6 +4,11 @@ export interface Metric {
   context?: string;
 }
 
+export interface BrandProfileLink {
+  label: string;
+  url: string;
+}
+
 export interface Brand {
   name: string;
   logo: string;
@@ -12,6 +17,8 @@ export interface Brand {
   handle?: string;
   platform?: string;
   keyMetric?: string;
+  /** Clickable profile links (fills card body; keep symmetrical per brand) */
+  profileLinks?: BrandProfileLink[];
 }
 
 export interface Service {
@@ -96,6 +103,12 @@ const content: SiteContent = {
       tags: ["AI Tool", "App Demo", "Talking Head"],
       handle: "@typewithblaze",
       platform: "TikTok",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@typewithblaze",
+        },
+      ],
     },
     {
       name: "Hyperknow",
@@ -105,6 +118,16 @@ const content: SiteContent = {
       tags: ["AI Tool", "App Demo", "Education"],
       handle: "@sathyaxstudy",
       platform: "TikTok & Instagram",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@sathyaxstudy",
+        },
+        {
+          label: "Instagram",
+          url: "https://www.instagram.com/sathyaxstudy",
+        },
+      ],
     },
     {
       name: "Taller",
@@ -115,6 +138,16 @@ const content: SiteContent = {
       handle: "@blaze.taller",
       platform: "TikTok & Instagram",
       keyMetric: "350K views in 30 days",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@blaze.taller",
+        },
+        {
+          label: "Instagram",
+          url: "https://www.instagram.com/blaze.taller",
+        },
+      ],
     },
     {
       name: "Monster Energy",
@@ -124,6 +157,12 @@ const content: SiteContent = {
       tags: ["Brand Ambassador", "Product Review", "Lifestyle"],
       handle: "@blazetech59",
       platform: "TikTok",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@blazetech59",
+        },
+      ],
     },
   ],
 
@@ -180,7 +219,7 @@ const content: SiteContent = {
     {
       title: "Taller — Strong content format",
       brand: "Taller",
-      videoSrc: "/videos/taller-content-format-1.mov",
+      thumbnail: "/screenshots/taller-strong-content-format.png",
       embedUrl: "https://www.instagram.com/reel/DWNsvw1ieWW/",
       embedLabel: "Open on Instagram",
     },
@@ -196,9 +235,9 @@ const content: SiteContent = {
     {
       title: "Hyperknow — Text-led app showcase",
       brand: "Hyperknow",
-      videoSrc: "/videos/hyperknow-content-4-revision-1.mov",
+      thumbnail: "/screenshots/hyperknow-text-led-thumbnail.png",
       embedUrl:
-        "https://www.tiktok.com/@sathyaxstudy/video/7613949943425912094",
+        "https://www.tiktok.com/@sathyaxstudy/video/7612451675919371550",
       embedLabel: "Watch on TikTok",
     },
     {
@@ -220,7 +259,7 @@ const content: SiteContent = {
     {
       title: "Monster Energy — Viral edit trend",
       brand: "Monster Energy",
-      videoSrc: "/videos/monster-edit.mov",
+      thumbnail: "/screenshots/monster-viral-edit-trend.png",
       embedUrl:
         "https://www.tiktok.com/@blazetech59/video/7620571075159543070",
       embedLabel: "Watch on TikTok",

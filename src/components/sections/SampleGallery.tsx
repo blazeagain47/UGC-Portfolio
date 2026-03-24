@@ -14,11 +14,11 @@ export default function SampleGallery() {
             subtitle="Play in-browser previews when available, or use the link under each card for TikTok and Instagram"
           />
         </AnimatedSection>
-        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {content.samples.map((sample, i) => (
             <motion.div
               key={`${sample.title}-${sample.brand}`}
-              className="flex h-full min-h-0"
+              className="flex h-full w-full min-h-0 shrink-0 grow-0 sm:w-[calc(50%-0.75rem)] lg:w-[calc((100%-3rem)/3)] lg:max-w-[calc((100%-3rem)/3)]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}

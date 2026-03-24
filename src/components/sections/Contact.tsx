@@ -1,14 +1,28 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, ExternalLink, Linkedin } from "lucide-react";
-import Button from "../ui/Button";
+import { Mail, Check, Linkedin } from "lucide-react";
 import content from "../../data/content";
 
-const platformIcons: Record<string, typeof ExternalLink> = {
-  LinkedIn: Linkedin,
-};
+function platformIcon(platform: string) {
+  if (platform.toLowerCase().includes("tiktok"))
+    return <img src="/icons/tiktok.svg" alt="" className="h-4 w-4 shrink-0 rounded-[3px]" />;
+  if (platform.toLowerCase().includes("instagram"))
+    return <img src="/icons/instagram.svg" alt="" className="h-4 w-4 shrink-0 rounded-[3px]" />;
+  if (platform === "LinkedIn")
+    return <Linkedin className="h-4 w-4 shrink-0" />;
+  return null;
+}
 
 export default function Contact() {
   const { contact } = content;
+  const [copied, setCopied] = useState(false);
+
+  function handleCopyEmail() {
+    navigator.clipboard.writeText(contact.email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    });
+  }
 
   return (
     <section id="contact" className="px-6 py-20 sm:py-24">
@@ -27,38 +41,54 @@ export default function Contact() {
           love to hear about your project.
         </p>
 
-        <div className="mt-10">
-          <Button href={`mailto:${contact.email}`} size="lg">
+        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-base font-medium text-white shadow-lg shadow-accent/20 transition-all duration-200 hover:bg-accent-hover"
+          >
             <Mail className="h-5 w-5" />
             Send Me an Email
-          </Button>
+          </a>
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className={`inline-flex items-center gap-2 rounded-lg border px-5 py-3.5 text-sm font-medium transition-all duration-200 ${
+              copied
+                ? "border-green-500/40 bg-green-500/10 text-green-400"
+                : "border-dark-border bg-dark-card text-light-muted hover:border-accent/30 hover:bg-dark-hover hover:text-light"
+            }`}
+          >
+            {copied ? (
+              <>
+                <Check className="h-4 w-4" />
+                Copied!
+              </>
+            ) : (
+              <>
+                <Mail className="h-4 w-4 opacity-60" />
+                {contact.email}
+              </>
+            )}
+          </button>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-          {contact.socials.map((social) => {
-            const Icon = platformIcons[social.platform] ?? ExternalLink;
-            return (
-              <a
-                key={social.url}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-light-muted transition-colors hover:text-accent"
-              >
-                <Icon className="h-3.5 w-3.5" />
-                {social.handle}
-                <span className="text-xs text-light-muted/50">
-                  ({social.platform})
-                </span>
-              </a>
-            );
-          })}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          {contact.socials.map((social) => (
+            <a
+              key={social.url}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-dark-border bg-dark-card px-4 py-2.5 text-sm font-medium text-light-muted transition-all duration-200 hover:border-accent/30 hover:bg-dark-hover hover:text-light"
+            >
+              {platformIcon(social.platform)}
+              {social.handle}
+            </a>
+          ))}
         </div>
 
         {contact.ratesNote && (
-          <p className="mt-8 text-sm text-light-muted/60">
-            {contact.ratesNote}
-          </p>
+          <p className="mt-8 text-sm text-light-muted/60">{contact.ratesNote}</p>
         )}
       </motion.div>
     </section>

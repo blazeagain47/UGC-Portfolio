@@ -11,7 +11,9 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center px-6 pt-20">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-accent/5 blur-3xl" />
+        <div className="hero-orb-1 absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-accent/5 blur-3xl" />
+        <div className="hero-orb-2 absolute left-1/4 top-1/3 h-[400px] w-[500px] -translate-x-1/2 rounded-full bg-accent/[0.03] blur-3xl" />
+        <div className="hero-orb-1 absolute right-1/4 top-1/4 h-[300px] w-[400px] rounded-full bg-indigo-500/[0.04] blur-3xl" style={{ animationDelay: "-9s" }} />
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-12 md:flex-row md:gap-16">
