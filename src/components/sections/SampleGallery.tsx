@@ -11,7 +11,7 @@ export default function SampleGallery() {
         <AnimatedSection>
           <SectionHeading
             title="Content Samples"
-            subtitle="Play in-browser previews when available, or use the link under each card for TikTok and Instagram"
+            subtitle="Play previews directly in your browser"
           />
         </AnimatedSection>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">

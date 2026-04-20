@@ -239,70 +239,10 @@ const content: SiteContent = {
 
   samples: [
     {
-      title: "Taller — Instagram reel",
-      brand: "Taller",
-      thumbnail: "/screenshots/taller-reel-thumb.png",
-      thumbnailObjectPosition: "center 32%",
-      embedUrl:
-        "https://www.instagram.com/reel/DVSwrYICSgL/?igsh=NTc4MTIwNjQ2YQ==",
-      result: "100K+ views (reel)",
-      embedLabel: "Open on Instagram",
-    },
-    {
-      title: "Taller — Strong content format",
-      brand: "Taller",
-      thumbnail: "/screenshots/taller-strong-content-format.png",
-      embedUrl: "https://www.instagram.com/reel/DWNsvw1ieWW/",
-      embedLabel: "Open on Instagram",
-    },
-    {
-      title: "Hyperknow — Head-style talking tips",
-      brand: "Hyperknow",
-      thumbnail: "/screenshots/studystorythumbnail.png",
-      thumbnailObjectPosition: "center 48%",
-      embedUrl:
-        "https://www.tiktok.com/@sathyaxstudy/video/7613949943425912094",
-      embedLabel: "Watch on TikTok",
-    },
-    {
-      title: "Hyperknow — Text-led app showcase",
-      brand: "Hyperknow",
-      thumbnail: "/screenshots/hyperknow-text-led-thumbnail.png",
-      embedUrl:
-        "https://www.tiktok.com/@sathyaxstudy/video/7612451675919371550",
-      embedLabel: "Watch on TikTok",
-    },
-    {
-      title: "BlazeKey — App Walkthrough",
-      brand: "BlazeKey",
-      thumbnail: "/screenshots/bk3thumbnail.png",
-      embedUrl:
-        "https://www.tiktok.com/@typewithblaze/video/7617679014169300255",
-      embedLabel: "Watch on TikTok",
-    },
-    {
-      title: "BlazeKey — Product Showcase",
-      brand: "BlazeKey",
-      thumbnail: "/screenshots/bk1thumbnail.png",
-      embedUrl:
-        "https://www.tiktok.com/@typewithblaze/video/7615443433498365215",
-      embedLabel: "Watch on TikTok",
-    },
-    {
-      title: "Monster Energy — Viral edit trend",
-      brand: "Monster Energy",
-      thumbnail: "/screenshots/monster-viral-edit-trend.png",
-      embedUrl:
-        "https://www.tiktok.com/@blazetech59/video/7620571075159543070",
-      embedLabel: "Watch on TikTok",
-    },
-    {
-      title: "Monster Energy — Text on photos (slideshow)",
-      brand: "Monster Energy",
-      thumbnail: "/screenshots/monster-photothumbnail.png",
-      embedUrl:
-        "https://www.tiktok.com/@blazetech59/photo/7620513603237498142?_r=1&_t=ZP-94wQobJjc7i&sp_source=7620600930366801439",
-      embedLabel: "Watch on TikTok",
+      title: "BioTech Labs — Supplement Paid Ad",
+      brand: "BioTech Labs",
+      videoSrc: "/videos/S001 - UGC.mp4",
+      result: "Paid Ad",
     },
   ],
 
