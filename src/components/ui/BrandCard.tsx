@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Youtube } from "lucide-react";
 import type { Brand } from "../../data/content";
 
 interface BrandCardProps {
@@ -13,10 +13,15 @@ function profileIconSrc(label: string): string | null {
   return null;
 }
 
+function isYouTubeLabel(label: string): boolean {
+  return label.toLowerCase().includes("youtube");
+}
+
 export default function BrandCard({ brand }: BrandCardProps) {
   const [logoFailed, setLogoFailed] = useState(false);
   const hasLogo = !!brand.logo && !logoFailed;
   const profileLinks = brand.profileLinks ?? [];
+  const isPrevious = brand.status === "previous";
 
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-dark-border bg-dark-card p-6 transition-all duration-300 hover:border-accent/25 hover:shadow-lg hover:shadow-accent/5">
@@ -45,7 +50,14 @@ export default function BrandCard({ brand }: BrandCardProps) {
             )}
           </div>
           <div className="min-w-0 flex-1 pt-0.5">
-            <h3 className="pr-28 text-lg font-semibold tracking-tight">{brand.name}</h3>
+            <div className="flex flex-wrap items-center gap-2 pr-28">
+              <h3 className="text-lg font-semibold tracking-tight">{brand.name}</h3>
+              {isPrevious && (
+                <span className="rounded-full border border-white/10 bg-dark-hover/70 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-light-muted">
+                  {brand.statusLabel ?? "Previous Work"}
+                </span>
+              )}
+            </div>
             {brand.handle && (
               <p className="mt-1 text-sm leading-snug text-light-muted">
                 {brand.handle}
@@ -77,6 +89,8 @@ export default function BrandCard({ brand }: BrandCardProps) {
                       width={20}
                       height={20}
                     />
+                  ) : isYouTubeLabel(link.label) ? (
+                    <Youtube className="h-5 w-5 shrink-0 opacity-90" />
                   ) : (
                     <ExternalLink className="h-4 w-4 shrink-0 opacity-80" />
                   )}

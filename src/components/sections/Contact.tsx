@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Check, Linkedin } from "lucide-react";
+import { Mail, Check, Linkedin, Youtube } from "lucide-react";
 import content from "../../data/content";
 
 function platformIcon(platform: string) {
@@ -8,6 +8,8 @@ function platformIcon(platform: string) {
     return <img src="/icons/tiktok.svg" alt="" className="h-4 w-4 shrink-0 rounded-[3px]" />;
   if (platform.toLowerCase().includes("instagram"))
     return <img src="/icons/instagram.svg" alt="" className="h-4 w-4 shrink-0 rounded-[3px]" />;
+  if (platform.toLowerCase().includes("youtube"))
+    return <Youtube className="h-4 w-4 shrink-0" />;
   if (platform === "LinkedIn")
     return <Linkedin className="h-4 w-4 shrink-0" />;
   return null;

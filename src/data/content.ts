@@ -19,6 +19,10 @@ export interface Brand {
   keyMetric?: string;
   /** Clickable profile links (fills card body; keep symmetrical per brand) */
   profileLinks?: BrandProfileLink[];
+  /** Current or previous work. Defaults to current when omitted. */
+  status?: "current" | "previous";
+  /** Override label shown on the badge (e.g. "Previous Work"). */
+  statusLabel?: string;
 }
 
 export interface Service {
@@ -78,11 +82,10 @@ const content: SiteContent = {
     {
       value: "350K+",
       label: "Views in 30 Days",
-      context: "Taller App",
     },
     {
-      value: "308.8K",
-      label: "Views in Last 30 Days",
+      value: "5M+",
+      label: "Views Across All Accounts",
     },
     {
       value: "150+",
@@ -96,6 +99,66 @@ const content: SiteContent = {
 
   brands: [
     {
+      name: "Solvely",
+      logo: "/brands/solvelylogo.jpg",
+      description:
+        "Currently creating UGC for Solvely, an AI-powered learning and problem-solving app. Producing talking-head and app demo content across TikTok, Instagram, and YouTube to drive student acquisition and engagement.",
+      tags: ["AI Tool", "App Demo", "Talking Head", "Education"],
+      handle: "@lockedinwithblaze",
+      platform: "TikTok, Instagram & YouTube",
+      status: "current",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@lockedinwithblaze",
+        },
+        {
+          label: "Instagram",
+          url: "https://www.instagram.com/lockedinwithblaze",
+        },
+        {
+          label: "YouTube",
+          url: "https://www.youtube.com/@lockedinwithblaze",
+        },
+      ],
+    },
+    {
+      name: "Monster Energy",
+      logo: "/brands/monsterenergylogo.png",
+      description:
+        "Official Monster Energy brand ambassador. Creating product review and lifestyle content on my personal account, demonstrating versatility across both tech and consumer product categories.",
+      tags: ["Brand Ambassador", "Product Review", "Lifestyle"],
+      handle: "@blazetech59",
+      platform: "TikTok",
+      status: "current",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@blazetech59",
+        },
+      ],
+    },
+    {
+      name: "Taller",
+      logo: "/brands/tallerapplogo.png",
+      description:
+        "Created high-performing short-form content for Taller, a height prediction app. Built and managed the account that drove massive organic reach — the account has since transitioned to @blaze.gotall under GoTall.",
+      tags: ["App Demo", "Talking Head", "Account Management"],
+      keyMetric: "350K views in 30 days",
+      status: "previous",
+      statusLabel: "Previous Work",
+      profileLinks: [
+        {
+          label: "TikTok",
+          url: "https://www.tiktok.com/@blaze.gotall",
+        },
+        {
+          label: "Instagram",
+          url: "https://www.instagram.com/blaze.gotall",
+        },
+      ],
+    },
+    {
       name: "BlazeKey",
       logo: "/brands/blazeKey logo.png",
       description:
@@ -103,6 +166,8 @@ const content: SiteContent = {
       tags: ["AI Tool", "App Demo", "Talking Head"],
       handle: "@typewithblaze",
       platform: "TikTok",
+      status: "previous",
+      statusLabel: "Previous Work",
       profileLinks: [
         {
           label: "TikTok",
@@ -118,6 +183,8 @@ const content: SiteContent = {
       tags: ["AI Tool", "App Demo", "Education"],
       handle: "@sathyaxstudy",
       platform: "TikTok & Instagram",
+      status: "previous",
+      statusLabel: "Previous Work",
       profileLinks: [
         {
           label: "TikTok",
@@ -126,41 +193,6 @@ const content: SiteContent = {
         {
           label: "Instagram",
           url: "https://www.instagram.com/sathyaxstudy",
-        },
-      ],
-    },
-    {
-      name: "Taller",
-      logo: "/brands/tallerapplogo.png",
-      description:
-        "Created high-performing short-form content for Taller, a height prediction app. Managed the @blaze.taller account with talking-head and app demo formats that drove massive organic reach.",
-      tags: ["App Demo", "Talking Head", "Account Management"],
-      handle: "@blaze.taller",
-      platform: "TikTok & Instagram",
-      keyMetric: "350K views in 30 days",
-      profileLinks: [
-        {
-          label: "TikTok",
-          url: "https://www.tiktok.com/@blaze.taller",
-        },
-        {
-          label: "Instagram",
-          url: "https://www.instagram.com/blaze.taller",
-        },
-      ],
-    },
-    {
-      name: "Monster Energy",
-      logo: "/brands/monsterenergylogo.png",
-      description:
-        "Official Monster Energy brand ambassador. Creating product review and lifestyle content on my personal account, demonstrating versatility across both tech and consumer product categories.",
-      tags: ["Brand Ambassador", "Product Review", "Lifestyle"],
-      handle: "@blazetech59",
-      platform: "TikTok",
-      profileLinks: [
-        {
-          label: "TikTok",
-          url: "https://www.tiktok.com/@blazetech59",
         },
       ],
     },
@@ -278,19 +310,29 @@ const content: SiteContent = {
     email: "sathyasugc@gmail.com",
     socials: [
       {
+        platform: "Instagram",
+        url: "https://www.instagram.com/lockedinwithblaze",
+        handle: "@lockedinwithblaze",
+      },
+      {
+        platform: "TikTok",
+        url: "https://www.tiktok.com/@lockedinwithblaze",
+        handle: "@lockedinwithblaze",
+      },
+      {
+        platform: "YouTube",
+        url: "https://www.youtube.com/@lockedinwithblaze",
+        handle: "@lockedinwithblaze",
+      },
+      {
         platform: "TikTok",
         url: "https://www.tiktok.com/@blazetech59",
         handle: "@blazetech59",
       },
       {
         platform: "Instagram",
-        url: "https://www.instagram.com/sathyaxstudy",
-        handle: "@sathyaxstudy",
-      },
-      {
-        platform: "Instagram",
-        url: "https://www.instagram.com/blaze.taller",
-        handle: "@blaze.taller",
+        url: "https://www.instagram.com/blaze.gotall",
+        handle: "@blaze.gotall",
       },
       {
         platform: "LinkedIn",
