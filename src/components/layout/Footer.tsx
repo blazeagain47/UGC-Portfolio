@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex gap-6">
           {content.contact.socials.map((social) => (
             <a
-              key={social.handle}
+              key={social.url}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"

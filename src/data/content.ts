@@ -34,15 +34,16 @@ export interface Service {
 export interface Sample {
   title: string;
   brand: string;
-  videoSrc?: string;
-  embedUrl?: string;
+  /** Primary video source (mp4) — plays inline on the site. */
+  videoSrc: string;
+  /** Poster/cover image shown before playback and used as a fast-loading thumbnail. */
   thumbnail?: string;
-  /** CSS `object-position` for thumbnail crop (2:3 frame) */
-  thumbnailObjectPosition?: string;
-  /** CSS `object-position` for in-card video preview & playback */
-  videoObjectPosition?: string;
+  /** Short category/result label shown as a pill (e.g. "Paid Ad"). */
   result?: string;
-  embedLabel?: string;
+  /** Optional grouping tag for filters (defaults to derived from brand). */
+  category?: string;
+  /** CSS `object-position` override for the poster/video inside the 9:16 frame. */
+  videoObjectPosition?: string;
 }
 
 export interface SocialLink {
@@ -239,9 +240,35 @@ const content: SiteContent = {
 
   samples: [
     {
-      title: "BioTech Labs — Supplement Paid Ad",
+      title: "BioTech Labs — Berberine Paid Ad 01",
       brand: "BioTech Labs",
-      videoSrc: "/videos/S001 - UGC.mp4",
+      category: "Supplements",
+      videoSrc: "/videos/biotech-berberine-2.mp4",
+      thumbnail: "/videos/biotech-berberine-2-cover.jpg",
+      result: "Paid Ad",
+    },
+    {
+      title: "BioTech Labs — Berberine Paid Ad 02",
+      brand: "BioTech Labs",
+      category: "Supplements",
+      videoSrc: "/videos/biotech-berberine-3.mp4",
+      thumbnail: "/videos/biotech-berberine-3-cover.jpg",
+      result: "Paid Ad",
+    },
+    {
+      title: "BioTech Labs — Berberine Paid Ad 03",
+      brand: "BioTech Labs",
+      category: "Supplements",
+      videoSrc: "/videos/biotech-berberine-4.mp4",
+      thumbnail: "/videos/biotech-berberine-4-cover.jpg",
+      result: "Paid Ad",
+    },
+    {
+      title: "BioTech Labs — Berberine Paid Ad 04",
+      brand: "BioTech Labs",
+      category: "Supplements",
+      videoSrc: "/videos/biotech-berberine-5.mp4",
+      thumbnail: "/videos/biotech-berberine-5-cover.jpg",
       result: "Paid Ad",
     },
   ],
